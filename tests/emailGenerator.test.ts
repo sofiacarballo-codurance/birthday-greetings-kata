@@ -1,28 +1,22 @@
 import {EmailGenerator} from "../src/EmailGenerator";
 import {Email} from "../src/Email";
 
-describe('Email generator', () => {
+describe('Email generator should', () => {
   it('create email with subject "Happy Birthday!"', () => {
     const email: Email = new EmailGenerator().createEmail("Rita");
 
     expect(email.subject).toEqual("Happy Birthday!");
   });
 
-  it('create email with body "Happy birthday, dear Rita!"', () => {
-    const email: Email = new EmailGenerator().createEmail("Rita");
+  describe("create email with body", () => {
+    it.each([
+      ["Rita", "Happy birthday, dear Rita!"],
+      ["Sofía", "Happy birthday, dear Sofía!"],
+      ["Daida", "Happy birthday, dear Daida!"]
+    ])("create email with body \"Happy birthday, dear %s!\"", (firstName, expected) => {
+      const email: Email = new EmailGenerator().createEmail(firstName);
 
-    expect(email.body).toEqual("Happy birthday, dear Rita!");
-  });
-
-  it('create email with body "Happy birthday, dear Sofía!"', () => {
-    const email: Email = new EmailGenerator().createEmail("Sofía");
-
-    expect(email.body).toEqual("Happy birthday, dear Sofía!");
-  });
-
-  it('create email with body "Happy birthday, dear Daida!"', () => {
-    const email: Email = new EmailGenerator().createEmail("Daida");
-
-    expect(email.body).toEqual("Happy birthday, dear Daida!");
+      expect(email.body).toBe(expected);
+    });
   });
 });
