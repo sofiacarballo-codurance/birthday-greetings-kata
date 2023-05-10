@@ -2,8 +2,8 @@ export class Email {
     subject: string;
     body: string;
 
-    constructor() {
+    constructor(firstName: string) {
         this.subject = "Happy Birthday!";
-        this.body = "Happy birthday, dear Rita!";
+        this.body = `Happy birthday, dear ${firstName}!`;
     }
 }

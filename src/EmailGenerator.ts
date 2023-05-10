@@ -2,7 +2,7 @@ import {Email} from "./Email";
 
 export class EmailGenerator {
 
-    createEmail(): Email {
-        return new Email();
+    createEmail(firstName: string): Email {
+        return new Email(firstName);
     }
 }
