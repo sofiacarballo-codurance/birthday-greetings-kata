@@ -7,4 +7,10 @@ describe('Email generator', () => {
 
     expect(email.subject).toEqual("Happy Birthday!");
   });
+
+  it('create email with body "Happy birthday, dear Rita!"', () => {
+    const email: Email = new EmailGenerator().createEmail();
+
+    expect(email.body).toEqual("Happy birthday, dear Rita!");
+  });
 });
