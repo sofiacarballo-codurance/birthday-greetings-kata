@@ -28,6 +28,26 @@ To lint the TypeScript files:
 npm run lint
 ```
 
+## Docker
+
+To run this project in Docker:
+
+```
+docker build -t boilerplate-typescript-with-jest .
+```
+
+Build the Docker image:
+
+```
+docker build -t boilerplate-typescript-with-jest .
+```
+
+Run the Docker container:
+
+```
+docker run -it --rm boilerplate-typescript-with-jest
+```
+
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
