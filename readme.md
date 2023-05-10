@@ -1,8 +1,9 @@
 # TypeScript with Jest Boilerplate
+
 This is a TypeScript boilerplate with Jest and ESLint set up.
 
-
 ## Getting Started
+
 To get started with this project, first clone the repository:
 
 ```
@@ -28,4 +29,5 @@ npm run lint
 ```
 
 ## License
+
 This project is licensed under the MIT License. See the LICENSE file for details.
