@@ -1,5 +1,6 @@
 import {EmailGenerator} from "../src/EmailGenerator";
 import {Email} from "../src/Email";
+import {ReminderEmail} from "../src/ReminderEmail";
 
 describe('Email generator should', () => {
   it('create email with subject "Happy Birthday!"', () => {
@@ -18,5 +19,11 @@ describe('Email generator should', () => {
 
       expect(email.body).toBe(expected);
     });
+  });
+
+  it('create email with subject "Birthday Reminder"', () => {
+    const reminderEmail: ReminderEmail = new EmailGenerator().createReminderEmail();
+
+    expect(reminderEmail.subject).toBe("Birthday Reminder");
   });
 });
