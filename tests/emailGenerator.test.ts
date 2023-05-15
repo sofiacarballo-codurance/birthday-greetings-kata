@@ -22,24 +22,22 @@ describe('Note generator should', () => {
   });
 
   it('create note with subject "Birthday Reminder"', () => {
-    const birthdayPerson = "Sofía Carballo";
-    const birthdayReminderNote: BirthdayReminderNote = new NoteGenerator().createBirthdayReminderNote("", birthdayPerson);
+    const birthdayReminderNote: BirthdayReminderNote = new NoteGenerator().createBirthdayReminderNote("", []);
 
     expect(birthdayReminderNote.subject).toBe("Birthday Reminder");
   });
 
   it('create note with a body with a recipient name', () => {
     const recipientFirstName = "Rita";
-    const birthdayPerson = "Sofía Carballo";
-    const birthdayReminderNote: BirthdayReminderNote = new NoteGenerator().createBirthdayReminderNote(recipientFirstName, birthdayPerson);
+    const birthdayReminderNote: BirthdayReminderNote = new NoteGenerator().createBirthdayReminderNote(recipientFirstName, []);
 
     expect(birthdayReminderNote.body).toContain(`Dear ${recipientFirstName},`)
   })
 
-  it('create note with a body with a birthday person full name', () => {
+  it('create note with a body with a birthday person split full name', () => {
     const recipientFirstName = "Rita";
-    const birthdayPerson = "Sofía Carballo";
-    const birthdayReminderNote: BirthdayReminderNote = new NoteGenerator().createBirthdayReminderNote(recipientFirstName, birthdayPerson);
+    const birthdayPersonFullName = ["Sofía", "Carballo"];
+    const birthdayReminderNote: BirthdayReminderNote = new NoteGenerator().createBirthdayReminderNote(recipientFirstName, birthdayPersonFullName);
 
     expect(birthdayReminderNote.body).toBe("Dear Rita, Today is Sofía Carballo's birthday. Don't forget to send him a message !")
   })
