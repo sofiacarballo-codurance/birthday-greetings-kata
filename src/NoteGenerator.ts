@@ -7,7 +7,7 @@ export class NoteGenerator {
         return new Note(firstName);
     }
 
-    createBirthdayReminderNote(recipientFirstName: string) {
-        return new BirthdayReminderNote(recipientFirstName);
+    createBirthdayReminderNote(recipientFirstName: string, birthdayPerson: string) {
+        return new BirthdayReminderNote(recipientFirstName, birthdayPerson);
     }
 }
