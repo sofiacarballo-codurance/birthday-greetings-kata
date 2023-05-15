@@ -22,8 +22,15 @@ describe('Note generator should', () => {
   });
 
   it('create note with subject "Birthday Reminder"', () => {
-    const birthdayReminderNote: BirthdayReminderNote = new NoteGenerator().createBirthdayReminderNote();
+    const birthdayReminderNote: BirthdayReminderNote = new NoteGenerator().createBirthdayReminderNote("");
 
     expect(birthdayReminderNote.subject).toBe("Birthday Reminder");
   });
+
+  it('create note with a body with a recipient name', () => {
+    const recipientFirstName = "Rita";
+    const birthdayReminderNote: BirthdayReminderNote = new NoteGenerator().createBirthdayReminderNote(recipientFirstName);
+
+    expect(birthdayReminderNote.body).toBe(`Dear ${recipientFirstName},`)
+  })
 });
