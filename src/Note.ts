@@ -1,4 +1,4 @@
-export class Email {
+export class Note {
     subject: string;
     body: string;
 

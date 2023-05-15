@@ -1,29 +1,29 @@
-import {EmailGenerator} from "../src/EmailGenerator";
-import {Email} from "../src/Email";
-import {ReminderEmail} from "../src/ReminderEmail";
+import {NoteGenerator} from "../src/NoteGenerator";
+import {Note} from "../src/Note";
+import {BirthdayReminderNote} from "../src/BirthdayReminderNote";
 
-describe('Email generator should', () => {
+describe('Note generator should', () => {
   it('create email with subject "Happy Birthday!"', () => {
-    const email: Email = new EmailGenerator().createEmail("Rita");
+    const note: Note = new NoteGenerator().createHappyBirthdayNote("Rita");
 
-    expect(email.subject).toEqual("Happy Birthday!");
+    expect(note.subject).toEqual("Happy Birthday!");
   });
 
-  describe("create email with body", () => {
+  describe("create note with body", () => {
     it.each([
       ["Rita", "Happy birthday, dear Rita!"],
       ["Sofía", "Happy birthday, dear Sofía!"],
       ["Daida", "Happy birthday, dear Daida!"]
-    ])("create email with body \"Happy birthday, dear %s!\"", (firstName, expected) => {
-      const email: Email = new EmailGenerator().createEmail(firstName);
+    ])("create note with body \"Happy birthday, dear %s!\"", (firstName, expected) => {
+      const note: Note = new NoteGenerator().createHappyBirthdayNote(firstName);
 
-      expect(email.body).toBe(expected);
+      expect(note.body).toBe(expected);
     });
   });
 
-  it('create email with subject "Birthday Reminder"', () => {
-    const reminderEmail: ReminderEmail = new EmailGenerator().createReminderEmail();
+  it('create note with subject "Birthday Reminder"', () => {
+    const birthdayReminderNote: BirthdayReminderNote = new NoteGenerator().createBirthdayReminderNote();
 
-    expect(reminderEmail.subject).toBe("Birthday Reminder");
+    expect(birthdayReminderNote.subject).toBe("Birthday Reminder");
   });
 });

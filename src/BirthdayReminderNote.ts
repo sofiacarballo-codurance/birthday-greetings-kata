@@ -1,4 +1,4 @@
-export class ReminderEmail {
+export class BirthdayReminderNote {
     subject: string;
 
     constructor() {
