@@ -36,10 +36,18 @@ describe('Note generator should', () => {
 
   it('create note with a body with a birthday person split full name', () => {
     const recipientFirstName = "Rita";
-    const birthdayPersonFullName = ["Sofía", "Carballo"];
+    const birthdayPersonFullName = [["Sofía", "Carballo"]];
     const birthdayReminderNote: BirthdayReminderNote = new NoteGenerator().createBirthdayReminderNote(recipientFirstName, birthdayPersonFullName);
 
     expect(birthdayReminderNote.body).toBe("Dear Rita, Today is Sofía Carballo's birthday. Don't forget to send him a message !")
+  })
+  
+  it('create note with a body with several birthday people', () => {
+    const recipientFirstName = "Rita";
+    const birthdayPersonFullName = [["Sofía", "Carballo"], ["Daida", "Medina"], ["Rita", "Teixeira"]];
+    const birthdayReminderNote: BirthdayReminderNote = new NoteGenerator().createBirthdayReminderNote(recipientFirstName, birthdayPersonFullName);
+    
+    expect(birthdayReminderNote.body).toBe("Dear Rita, Today is Sofía Carballo, Daida Medina, Rita Teixeira's birthday. Don't forget to send him a message !")
   })
 
 });
