@@ -7,7 +7,16 @@ export class FriendsRepository {
         ]
     }
 
-    getBirthdayFriends(): string[][] {
-        throw new Error("Not implemented");
+    getBirthdayFriends(currentDate: Date): string[][] {
+        // eslint-disable-next-line prefer-const
+        let birthdayFriendsList: string[][] = [];
+
+        this.friends.forEach((friend) => {
+            if(new Date(friend[2]).getMonth() === currentDate.getMonth() && new Date(friend[2]).getDate() === currentDate.getDate()) {
+                birthdayFriendsList.push(friend);
+            }
+        });
+
+        return birthdayFriendsList;
     }
 }
