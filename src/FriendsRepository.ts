@@ -9,26 +9,16 @@ export class FriendsRepository {
         ]
     }
 
-    getBirthdayFriends(currentDate: Date): Friend[] {
+    getBirthdayFriends(): Friend[] {
         // eslint-disable-next-line prefer-const
         let birthdayFriendsList: Friend[] = [];
 
         this.friends.forEach((friend) => {
-            this.isBirthdayToday(friend, currentDate) ? birthdayFriendsList.push(friend) : false;
+            if (friend.hasBirthdayToday()) {
+                birthdayFriendsList.push(friend);
+            }
         });
 
         return birthdayFriendsList;
-    }
-
-    private isBirthdayToday(friend: Friend, currentDate: Date) {
-        return this.isSameMonth(friend.birthday, currentDate) && this.isSameDate(friend, currentDate);
-    }
-
-    private isSameDate(friend: Friend, currentDate: Date) {
-        return new Date(friend.birthday).getDate() === currentDate.getDate();
-    }
-
-    private isSameMonth(birthday: string, currentDate: Date) {
-        return new Date(birthday).getMonth() === currentDate.getMonth()
     }
 }
