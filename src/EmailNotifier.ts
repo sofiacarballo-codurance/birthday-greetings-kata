@@ -1,8 +1,8 @@
-import {Note} from "./Note";
+import {BirthdayGreetingNote} from "./BirthdayGreetingNote";
 
 class EmailNotifier {
 
-    notify(note: Note, friendEmail: string) {
+    notify(note: BirthdayGreetingNote, friendEmail: string) {
         //TODO: modify return
         return true;
     }

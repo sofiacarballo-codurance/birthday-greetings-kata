@@ -1,10 +1,10 @@
 import {NoteGenerator} from "../src/NoteGenerator";
-import {Note} from "../src/Note";
+import {BirthdayGreetingNote} from "../src/BirthdayGreetingNote";
 import {BirthdayReminderNote} from "../src/BirthdayReminderNote";
 
 describe('Note generator should', () => {
   it('create email with subject "Happy Birthday!"', () => {
-    const note: Note = new NoteGenerator().createHappyBirthdayNote("Rita");
+    const note: BirthdayGreetingNote = new NoteGenerator().createHappyBirthdayNote("Rita");
 
     expect(note.subject).toEqual("Happy Birthday!");
   });
@@ -15,7 +15,7 @@ describe('Note generator should', () => {
       ["Sofía", "Happy birthday, dear Sofía!"],
       ["Daida", "Happy birthday, dear Daida!"]
     ])("create note with body \"Happy birthday, dear %s!\"", (firstName, expected) => {
-      const note: Note = new NoteGenerator().createHappyBirthdayNote(firstName);
+      const note: BirthdayGreetingNote = new NoteGenerator().createHappyBirthdayNote(firstName);
 
       expect(note.body).toBe(expected);
     });

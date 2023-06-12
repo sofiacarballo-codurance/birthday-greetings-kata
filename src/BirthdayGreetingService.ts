@@ -1,9 +1,14 @@
 import {emailNotifier} from "./EmailNotifier";
-import {Note} from "./Note";
+import {BirthdayGreetingNote} from "./BirthdayGreetingNote";
+import {friendsRepository} from "./FriendsRepository";
 
 export class BirthdayGreetingService {
 
     sendTodayGreetings() {
-        emailNotifier.notify(new Note("Ana"), "email")
+        const birthdayFriends = friendsRepository.getBirthdayFriends();
+        birthdayFriends.forEach((friend) => {
+            emailNotifier.notify(new BirthdayGreetingNote(friend.firstName), friend.email)
+        });
+        
     }
 }

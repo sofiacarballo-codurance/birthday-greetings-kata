@@ -1,7 +1,7 @@
-import {Note} from "../src/Note";
+import {BirthdayGreetingNote} from "../src/BirthdayGreetingNote";
 import {emailNotifier} from "../src/EmailNotifier";
 
-const createHappyBirthdayNoteMock = jest.fn().mockReturnValue(new Note("Doe"));
+const createHappyBirthdayNoteMock = jest.fn().mockReturnValue(new BirthdayGreetingNote("Doe"));
 const NoteGeneratorMock = jest.fn().mockImplementation(() => ({
     createHappyBirthdayNote: createHappyBirthdayNoteMock
 }));

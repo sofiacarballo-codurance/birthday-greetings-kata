@@ -1,10 +1,10 @@
-import {Note} from "./Note";
+import {BirthdayGreetingNote} from "./BirthdayGreetingNote";
 import {BirthdayReminderNote} from "./BirthdayReminderNote";
 
 export class NoteGenerator {
 
-    createHappyBirthdayNote(firstName: string): Note {
-        return new Note(firstName);
+    createHappyBirthdayNote(firstName: string): BirthdayGreetingNote {
+        return new BirthdayGreetingNote(firstName);
     }
     
     createBirthdayReminderNote(recipientFirstName: string, birthdayPersonFullName: string[][]) {

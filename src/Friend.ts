@@ -1,10 +1,10 @@
 export class Friend {
-    private name: string;
+    readonly firstName: string;
     private lastName: string;
     readonly birthday: string;
-    private email: string;
+    readonly email: string;
     constructor(name: string, lastName: string, birthday: string, email: string) {
-        this.name = name;
+        this.firstName = name;
         this.lastName = lastName;
         this.birthday = birthday;
         this.email = email;
