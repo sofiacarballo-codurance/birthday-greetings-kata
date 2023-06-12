@@ -1,6 +1,6 @@
 import {Friend} from "./Friend";
 
-export class FriendsRepository {
+class FriendsRepository {
     private friends: Friend[];
     constructor() {
         this.friends = [
@@ -22,3 +22,5 @@ export class FriendsRepository {
         return birthdayFriendsList;
     }
 }
+
+export const friendsRepository = new FriendsRepository();
