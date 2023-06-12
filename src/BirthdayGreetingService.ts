@@ -1,12 +1,12 @@
-import {Friend} from "./Friend";
 import {emailNotifier} from "./EmailNotifier";
 import {Note} from "./Note";
+import {FriendsRepository} from "./FriendsRepository";
 
 export class BirthdayGreetingService {
-    private friends: Friend[];
+    private friendsRepository: FriendsRepository;
 
-    constructor(friends: Friend[]) {
-        this.friends = friends;
+    constructor(friendsRepository: FriendsRepository) {
+        this.friendsRepository = friendsRepository;
     }
 
     sendTodayGreetings() {
