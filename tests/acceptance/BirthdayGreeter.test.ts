@@ -13,9 +13,8 @@ describe("Birthday Greeting", () => {
         const birthdayGreetingService: BirthdayGreetingService = new BirthdayGreetingService(birthdayFriends);
 
         birthdayGreetingService.sendTodayGreetings();
-        
         // fake notifier or test smtp
         // https://www.npmjs.com/package/fake-smtp-server
-        expect(true);
+        expect(false);
     });
 })

@@ -1,4 +1,6 @@
 import {Friend} from "./Friend";
+import {emailNotifier} from "./EmailNotifier";
+import {Note} from "./Note";
 
 export class BirthdayGreetingService {
     private friends: Friend[];
@@ -8,6 +10,6 @@ export class BirthdayGreetingService {
     }
 
     sendTodayGreetings() {
-        throw new Error("Not implement");
+        emailNotifier.notify(new Note("Ana"), "email")
     }
 }

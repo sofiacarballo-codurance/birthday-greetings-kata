@@ -1,8 +1,10 @@
 import {Note} from "./Note";
 
-export class EmailNotifier {
+class EmailNotifier {
 
     notify(note: Note, friendEmail: string) {
+        //TODO: modify return
         return true;
     }
 }
+export const emailNotifier = new EmailNotifier();

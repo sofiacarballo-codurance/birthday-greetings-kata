@@ -49,5 +49,4 @@ describe('Note generator should', () => {
     
     expect(birthdayReminderNote.body).toBe("Dear Rita, Today is Sofía Carballo, Daida Medina, Rita Teixeira's birthday. Don't forget to send him a message !")
   })
-
 });
