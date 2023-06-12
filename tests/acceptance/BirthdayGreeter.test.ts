@@ -9,8 +9,8 @@ describe("Birthday Greeting", () => {
         const birthdayGreetingService: BirthdayGreetingService = new BirthdayGreetingService();
 
         birthdayGreetingService.sendTodayGreetings();
-        // fake notifier or test smtp
+        // TODO: fake notifier or test smtp
         // https://www.npmjs.com/package/fake-smtp-server
-        expect(false);
+        expect(false).toBe(true);
     });
 })
