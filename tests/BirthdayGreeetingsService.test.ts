@@ -14,7 +14,7 @@ describe("Birthday Greetings Service", () => {
     const friend = new Friend("Doe", "John", "1982/10/08", "john.doe@foobar.com");
     jest.spyOn(friendsRepository, "getBirthdayFriends").mockReturnValue(
       [friend])
-    const emailNotifierSpy = jest.spyOn(emailNotifier, "notify").mockReturnValue(true);
+    const emailNotifierSpy = jest.spyOn(emailNotifier, "notify").mockReturnValue();
     const birthdayGreetingsService = new BirthdayGreetingService();
     birthdayGreetingsService.sendTodayGreetings();
     expect(emailNotifierSpy).toHaveBeenCalledTimes(1);
@@ -28,7 +28,7 @@ describe("Birthday Greetings Service", () => {
     const peterPan = new Friend("Peter", "Pan", "1982/10/08", "peter.pan@foobar.com");
     jest.spyOn(friendsRepository, "getBirthdayFriends").mockReturnValue(
       [doeJohn, paulSmith, peterPan])
-    const emailNotifierSpy = jest.spyOn(emailNotifier, "notify").mockReturnValue(true);
+    const emailNotifierSpy = jest.spyOn(emailNotifier, "notify").mockReturnValue();
     const birthdayGreetingsService = new BirthdayGreetingService();
     birthdayGreetingsService.sendTodayGreetings();
     expect(emailNotifierSpy).toHaveBeenCalledTimes(3);

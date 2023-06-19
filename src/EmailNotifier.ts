@@ -3,8 +3,7 @@ import {BirthdayGreetingNote} from "./BirthdayGreetingNote";
 class EmailNotifier {
 
     notify(note: BirthdayGreetingNote, friendEmail: string) {
-        //TODO: modify return
-        return true;
+        throw Error("Not implemented");
     }
 }
 export const emailNotifier = new EmailNotifier();
