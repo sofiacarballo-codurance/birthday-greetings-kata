@@ -22,6 +22,10 @@ class FriendsRepository {
 
         return birthdayFriendsList;
     }
+
+    getNonBirthdayFriends(): Friend[] {
+        throw Error("Not implemented");
+    }
 }
 
 export const friendsRepository = new FriendsRepository();

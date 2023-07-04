@@ -2,6 +2,7 @@ import {BirthdayGreetingService} from "../../src/BirthdayGreetingService";
 import {BirthdayGreetingNote} from "../../src/BirthdayGreetingNote";
 import {Friend} from "../../src/Friend";
 import {fakeMailchimp} from "../../src/FakeMailchimp";
+import {BirthdayReminderNote} from "../../src/BirthdayReminderNote";
 
 jest
   .useFakeTimers()
@@ -21,5 +22,17 @@ describe("Birthday Greeting", () => {
         expect(fakeMailchimpNotifierSpy).toHaveBeenCalledTimes(2);
         expect(fakeMailchimpNotifierSpy).toHaveBeenNthCalledWith(1, doeJohn.email, doeJohnNote.subject, doeJohnNote.body);
         expect(fakeMailchimpNotifierSpy).toHaveBeenNthCalledWith(2, samSmith.email, samSmithNote.subject, samSmithNote.body);
+    });
+
+    it("should send a reminder email when there is a birthday to the friends that don't have birthdays today", () => {
+        const birthdayGreetingService: BirthdayGreetingService = new BirthdayGreetingService();
+        const fakeMailchimpNotifierSpy = jest.spyOn(fakeMailchimp, "send").mockReturnValue();
+        birthdayGreetingService.sendTodayReminders();
+
+        const maryAnn = new Friend("Mary", "Ann", "1975/09/11", "mary.ann@foobar.com");
+        const maryAnnNote = new BirthdayReminderNote(maryAnn.firstName, [["Doe John"], ["Sam Smith"]]);
+
+        expect(fakeMailchimpNotifierSpy).toHaveBeenCalledTimes(1);
+        expect(fakeMailchimpNotifierSpy).toHaveBeenCalledWith(maryAnn.email, maryAnnNote.subject, maryAnnNote.body);
     });
 })

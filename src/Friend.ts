@@ -1,6 +1,6 @@
 export class Friend {
     readonly firstName: string;
-    private lastName: string;
+    readonly lastName: string;
     readonly birthday: string;
     readonly email: string;
     constructor(name: string, lastName: string, birthday: string, email: string) {

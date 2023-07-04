@@ -11,4 +11,8 @@ export class BirthdayGreetingService {
         });
         
     }
+
+    sendTodayReminders() {
+        throw Error("Not implemented");
+    }
 }
