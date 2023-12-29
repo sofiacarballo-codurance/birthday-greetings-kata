@@ -15,3 +15,5 @@ jobs:
         run: npm install
       - name: Lint
         run: npm run eslint
+      - name: Test
+        run: npm test
