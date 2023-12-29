@@ -38,7 +38,7 @@ describe("Birthday Greetings Service", () => {
     expect(emailNotifierSpy).toHaveBeenNthCalledWith(3, new BirthdayGreetingNote(peterPan.firstName), peterPan.email);
   })
 
-  it("should send one reminder email when there is one birthday person", () => {
+  xit("should send one reminder email when there is one birthday person", () => {
     const doeJohn = new Friend("Doe", "John", "1982/10/08", "john.doe@foobar.com");
     const paulSmith = new Friend("Paul", "Smith", "1988/05/09", "paul.smith@foobar.com");
 

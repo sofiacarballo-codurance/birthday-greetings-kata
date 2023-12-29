@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "test": "jest",
+    "test:unit": "jest tests/*.test.ts",
+    "test:acceptance": "jest tests/acceptance",
     "eslint": "eslint . --ext .ts"
   },
   "devDependencies": {
