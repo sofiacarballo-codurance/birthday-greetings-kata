@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "test": "jest",
-    "lint": "eslint . --ext .ts"
+    "eslint": "eslint . --ext .ts"
   },
   "devDependencies": {
     "@types/jest": "^27.0.1",
